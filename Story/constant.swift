@@ -12,4 +12,10 @@ struct K {
     
     
     static let cellIdentifier =  "ReuseableCell" 
+    static let cellNibName =  "MessageCell"
+    static let goToResult =  "goToResult"
+    static let goToNewResult =  "goToNewResult"
+    
+    
+    
 }

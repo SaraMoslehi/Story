@@ -8,8 +8,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-   
+    
+    
     @IBOutlet weak var searchTextField: UITextField!
     
     override func viewDidLoad() {
@@ -18,12 +18,13 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
     
-
+    
+    
     @IBAction func locationPressed(_ sender: UIButton) {
         
-      
+        self.performSegue(withIdentifier: K.goToNewResult, sender: self)
+        
     }
     
     
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate {
     @IBAction func searchPressed(_ sender: UIButton) {
         searchTextField.endEditing(true)
-        self.performSegue(withIdentifier: "goToResult", sender: self)
+        self.performSegue(withIdentifier: K.goToResult, sender: self)
         
     }
     

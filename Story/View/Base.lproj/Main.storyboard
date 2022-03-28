@@ -92,6 +92,7 @@
                     <connections>
                         <outlet property="searchTextField" destination="c6E-DV-tAa" id="Pqu-Xs-EcE"/>
                         <segue destination="ZZ0-OQ-CeG" kind="presentation" identifier="goToResult" id="PYi-cv-AS2"/>
+                        <segue destination="4tN-La-eAo" kind="presentation" identifier="goToNewResult" modalPresentationStyle="fullScreen" id="bFq-fw-lgQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,6 +142,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lhp-e4-Ea3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="27.536231884057973" y="-618.08035714285711"/>
+        </scene>
+        <!--Sample Table View Controller-->
+        <scene sceneID="ezd-vZ-PnW">
+            <objects>
+                <viewController id="4tN-La-eAo" customClass="SampleTableViewController" customModule="Story" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9EM-rv-4xM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jnm-ZW-nba">
+                                <rect key="frame" x="26" y="292" width="368" height="570"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="8eo-CB-xgv">
+                                <rect key="frame" x="20" y="44" width="83" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="closeView:" destination="4tN-La-eAo" eventType="touchUpInside" id="PJj-FF-bMv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T3F-7d-PkH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="TableView" destination="jnm-ZW-nba" id="1kT-J0-zYD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H6o-EO-jGO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1468.1159420289857" y="-1291.0714285714284"/>
         </scene>
     </scenes>
     <resources>

@@ -1,8 +1,8 @@
 //
-//  TableViewController.swift
+//  SampleTableViewController.swift
 //  Story
 //
-//  Created by Sara on 3/27/22.
+//  Created by Sara on 3/28/22.
 //
 
 import Foundation
@@ -11,7 +11,7 @@ import Foundation
 
 import UIKit
 
-class TableViewController: UIViewController {
+class SampleTableViewController: UIViewController {
     
     @IBOutlet weak var TableView: UITableView!
     
@@ -23,19 +23,21 @@ class TableViewController: UIViewController {
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("view did load")
         TableView.dataSource = self
-        TableView.delegate = self
-//        TableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
-//        // Do any additional setup after loading the view.
+        
+        TableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        // Do any additional setup after loading the view.
     }
     
-    
-    @IBAction func close(_ sender: UIButton) {
+    @IBAction func closeView(_ sender: UIButton) {
+        print("closeeee")
         self.dismiss(animated: false, completion: nil)
     }
+    
 }
 
-extension TableViewController : UITableViewDataSource {
+extension SampleTableViewController : UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,20 +45,11 @@ extension TableViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as! MessageCell
+        cell.lable.text = messages[indexPath.row].body
         
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
-        cell.textLabel?.text = messages[indexPath.row].body
-
         return cell
     }
     
 }
-
-extension TableViewController : UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
-}
-
-
