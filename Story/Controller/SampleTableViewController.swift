@@ -18,7 +18,7 @@ class SampleTableViewController: UIViewController {
     var messages : [Message] = [
         Message(sender: "Sara", body: "Hi"),
         Message(sender: "Who", body: "Hello!"),
-        Message(sender: "Sara", body: "What's up")
+        Message(sender: "Sara", body: "gerade wurde ein Jobangebot veröffentlicht, das Ihrem Anforderungsprofil entspricht.")
         
     ]
     override func viewDidLoad() {
